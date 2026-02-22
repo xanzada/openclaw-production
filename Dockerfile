@@ -14,5 +14,5 @@ RUN mkdir -p /root/.openclaw
 
 EXPOSE 18789
 
-# Тек негізгі іске қосу бұйрығы
-CMD ["openclaw", "gateway", "--bind", "lan", "--port", "18789", "--allow-unconfigured"]
+# Ең сенімді іске қосу форматы
+CMD openclaw gateway --bind lan --port 18789 --allow-unconfigured
