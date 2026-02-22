@@ -3,13 +3,14 @@ services:
     build: .
     container_name: openclaw
     restart: unless-stopped
-
     environment:
       NODE_OPTIONS: --dns-result-order=ipv4first
-
+      # Прокси желілерін сенімді деп тану (Easypanel үшін өте маңызды)
+      OPENCLAW_GATEWAY_TRUSTEDPROXIES: "10.0.0.0/8,172.16.0.0/12,192.168.0.0/16"
+      # HTTP/HTTPS арқылы кіруге толық рұқсат
+      OPENCLAW_GATEWAY_CONTROLUI_ALLOWINSECUREAUTH: "true"
     ports:
       - "8789:18789"
-
     volumes:
       - openclaw-data:/root/.openclaw
 
