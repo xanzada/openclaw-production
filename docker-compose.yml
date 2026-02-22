@@ -1,12 +1,15 @@
 services:
   openclaw:
     build: .
-    container_name: openclaw-prod
+    container_name: openclaw
     restart: unless-stopped
+
     environment:
-      - NODE_OPTIONS="--dns-result-order=ipv4first"
+      NODE_OPTIONS: --dns-result-order=ipv4first
+
     ports:
       - "8789:18789"
+
     volumes:
       - openclaw-data:/root/.openclaw
 
