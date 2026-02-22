@@ -3,14 +3,15 @@ services:
     build: .
     container_name: openclaw
     restart: unless-stopped
+
     environment:
       NODE_OPTIONS: --dns-result-order=ipv4first
-      # Easypanel проксиін толық тану үшін
-      OPENCLAW_GATEWAY_TRUSTED_PROXIES: "*"
-      # Бақылау панеліне рұқсат беру
-      OPENCLAW_GATEWAY_CONTROLUI_ALLOWINSECUREAUTH: "true"
+      OPENCLAW_GATEWAY_TRUSTEDPROXIES: "*"
+      OPENCLAW_CONTROLUI_ALLOWINSECUREAUTH: "true"
+
     ports:
       - "8789:18789"
+
     volumes:
       - openclaw-data:/root/.openclaw
 
