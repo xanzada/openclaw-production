@@ -17,4 +17,4 @@ RUN mkdir -p /root/.openclaw
 
 EXPOSE 18789
 
-CMD sh -c "openclaw config set gateway.controlUi.allowInsecureAuth true && openclaw gateway --bind lan --port 18789 --allow-unconfigured"
+CMD sh -c "openclaw config set gateway.controlUi.allowInsecureAuth true && openclaw config set gateway.trustedProxies '10.0.0.0/8,172.16.0.0/12,192.168.0.0/16' && openclaw gateway --bind lan --port 18789 --allow-unconfigured"
