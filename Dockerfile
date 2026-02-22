@@ -14,4 +14,5 @@ RUN mkdir -p /root/.openclaw
 
 EXPOSE 18789
 
-CMD sh -c "openclaw config set gateway.controlUi.allowInsecureAuth true && openclaw gateway --bind lan --port 18789 --allow-unconfigured"
+# --allow-unconfigured сөзін алып тастадық және форматты қатаңдаттық
+CMD ["sh", "-c", "openclaw config set gateway.controlUi.allowInsecureAuth true && openclaw gateway --bind lan --port 18789"]
